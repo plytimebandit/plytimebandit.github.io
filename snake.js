@@ -5,22 +5,22 @@ window.onload = function() {
     const DOWN = 40;
     const SPACE = 32;
 
-    const WIDTH = 600
-    const HEIGHT = 400
-    const PIXEL_SIZE = WIDTH / 64
+    const WIDTH = 600;
+    const HEIGHT = 400;
+    const PIXEL_SIZE = WIDTH / (20 * 3);
 
     const COLOR_SNAKE = '#ec633a';
     const COLOR_BG = '#242628';
     const COLOR_GAMEOVER = '#FF0000';
     const COLOR_FOOD = '#00FF00';
-    const COLOR_POINTS = '#FFFFFF'
+    const COLOR_POINTS = '#FFFFFF';
 
     // first elemet = tail; last element = head
     var snake = [
         [10, 10], [11, 10], [12, 10], [13, 10], [14, 10]
-    ]
+    ];
     var snakeDefault = snake.slice();
-    var direction = RIGHT
+    var direction = RIGHT;
     var foodCoords = getNewFoodCoords();
 
     var started = false;
@@ -33,6 +33,9 @@ window.onload = function() {
     updateUI();
 
     window.onkeydown = function(e) {
+        if ((e.keyCode < LEFT || e.keyCode > DOWN) && e.keyCode != SPACE) {
+            return;
+        }
         if (gameOver) {
             snake = snakeDefault.slice();
             gameOver = false;
