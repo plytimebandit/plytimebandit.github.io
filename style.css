@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "Oswald";
+    src: url("fonts/ttf/Oswald-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Alegreya";
+    src: url("fonts/ttf/AlegreyaSans-Regular.ttf");
+}
+
+body {
+    background: #242628;
+    color: white;
+    margin: 50px;
+    font-family: "Alegreya", serif;
+}
+
+h1 {
+    font-family: "Oswald", sans-serif;
+    border-bottom: 2px solid #ec633a;
+}
+
+h2 {
+    font-family: sans-serif;
+    border-bottom: 1px solid #ec633a;
+}
+
+a {
+    color: white;
+}
+
+img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+#footer {
+    border-top: 2px solid #ec633a;
+    position: absolute;
+    left: 50px;
+    right: 50px;
+    bottom: 50px;
+}
+
+#snakeCanvas {
+    border: 2px solid #c3c3c3;
+}
+
+.center {
+    margin: auto;
+    text-align: center;
+}
+
+.spacer {
+    padding-top: 30px;
+}

@@ -1,48 +1,10 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>plytimebandit</title>
-
-    <style>
-        @font-face {
-            font-family: "Oswald";
-            src: url("fonts/ttf/Oswald-Regular.ttf");
-        }
-        @font-face {
-            font-family: "Alegreya";
-            src: url("fonts/ttf/AlegreyaSans-Regular.ttf");
-        }
-        body {
-            background: #242628;
-            color: white;
-            margin: 50px;
-            font-family: "Alegreya", serif;
-        }
-        h1 {
-            font-family: "Oswald", sans-serif;
-            border-bottom: 2px solid #ec633a;
-        }
-        h2 {
-            font-family: sans-serif;
-            border-bottom: 1px solid #ec633a;
-        }
-        a {
-            color: white;
-        }
-        img {
-            vertical-align: middle;
-            margin-right: 10px;
-        }
-        #footer {
-            border-top: 2px solid #ec633a;
-            position: absolute;
-            left: 50px;
-            right: 50px;
-            bottom: 50px;
-        }
-        .spacer {
-            padding-top: 30px;
-        }
-    </style>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="snake.js" type="text/javascript"></script>
 </head>
 <body>
     <h1>plytimebandit</h1>
@@ -50,6 +12,12 @@
     <div>
         <img src="images/GitHub-Mark-Light-120px-plus.png" width="32" height="32" alt="GitHub">
         <a href="https://github.com/plytimebandit">github.com/plytimebandit</a>
+    </div>
+
+    <div class="center spacer">
+        <canvas id="snakeCanvas" width="600" height="400">
+            Your browser does not support the canvas element! :(
+        </canvas>
     </div>
 
     <div id="footer"></div>
