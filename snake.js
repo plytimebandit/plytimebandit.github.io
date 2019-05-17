@@ -111,6 +111,7 @@ window.onload = function() {
 
         if (gameOver) {
             clearInterval(timer);
+            points = 0;
         }
     }
 
