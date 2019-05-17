@@ -13,6 +13,7 @@ window.onload = function() {
     const COLOR_BG = '#242628';
     const COLOR_GAMEOVER = '#FF0000';
     const COLOR_FOOD = '#00FF00';
+    const COLOR_POINTS = '#FFFFFF'
 
     // first elemet = tail; last element = head
     var snake = [
@@ -22,13 +23,15 @@ window.onload = function() {
     var direction = RIGHT
     var foodCoords = getNewFoodCoords();
 
-    updateUI();
-
     var started = false;
     var gameOver = false;
     var directionChangeFreeze = false;
     var growSnake = false;
+    var points = 0;
     var timer = 'undefined';
+
+    updateUI();
+
     window.onkeydown = function(e) {
         if (gameOver) {
             snake = snakeDefault.slice();
@@ -102,6 +105,7 @@ window.onload = function() {
         // collected food
         if (snakesHeadX == foodCoords[0] && snakesHeadY == foodCoords[1]) {
             growSnake = true;
+            points += 1;
             foodCoords = getNewFoodCoords();
         }
 
@@ -140,7 +144,8 @@ window.onload = function() {
         if (gameOver) {
             ctx.fillStyle = COLOR_GAMEOVER;
             ctx.font = "30px Arial";
-            ctx.fillText("Game Over", 10, 50);
+            ctx.textAlign = "center";
+            ctx.fillText("Game Over", WIDTH/2, HEIGHT/2);
         } else {
             ctx.fillStyle = COLOR_BG;
             ctx.fillRect(0, 0, WIDTH, HEIGHT);
@@ -152,6 +157,11 @@ window.onload = function() {
             snake.forEach(function(e) {
                 ctx.fillRect(e[0]*PIXEL_SIZE+1, e[1]*PIXEL_SIZE+1, PIXEL_SIZE-2, PIXEL_SIZE-2);
             });
+
+            ctx.fillStyle = COLOR_POINTS;
+            ctx.font = "12px Arial";
+            ctx.textAlign = "start";
+            ctx.fillText("Points: " + points, 2, 12);
         }
     }
 
